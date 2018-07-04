@@ -1,0 +1,130 @@
+.container-homepage {
+  background-color: #f1f1f1;
+  padding:0;
+  margin:0;
+
+  min-height: 100%;
+  min-width: 100%;
+
+  width: auto;
+  height: auto;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-image: url("../images/IMG477.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* bottom: 0;
+  right: 0; */
+}
+
+.onephoto {
+  /* Add shadows to create the "card" effect */
+  width: 30%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  transition: 0.3s;
+  position: relative;
+  left: 30px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.onephoto:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.caption {
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.caption h1 {
+  font-family: 'Cardo';
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
+}
+
+.caption h2{
+  font-family: 'Yatra One';
+  font-size: 18px;
+}
+
+.image {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+}
+
+.navbar-brand {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: #FFFFFF !important;
+}
+
+.navbar.transparent.navbar-inverse {
+    /* border-width: 0px; */
+    /* -webkit-box-shadow: 0px 0px; */
+    /* box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1); */
+    background-color: rgba(10,10,10,0.1);
+    /* background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));;
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%); */
+}
+
+.btn {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: #FFFFFF;
+}
+
+.btn:hover {
+    background-color: #FFFFFF;
+    color: #717171;
+}
+
+i {
+  /* background: rgba(143, 211, 157, 1); */
+  /* border-radius: 100%; */
+  margin-left: 50%;
+  margin-top: 42%;
+  font-size: 40px;
+  display:inline-block;
+  color: #101010
+  /* vertical-align: middle; */
+}
+
+i:hover {
+  /* background: rgba(143, 211, 157, 1); */
+  /* border-radius: 100%; */
+  /* margin-left: 50%;
+  margin-top: 42%;
+  font-size: 40px;
+  display:inline-block; */
+  color: #808080
+  /* vertical-align: middle; */
+}
+
+/* .bg {
+  min-height: 100%;
+  min-width: 1024px;
+
+  width: 100%;
+  height: auto;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .bg {
+    left: 50%;
+    margin-left: -512px;
+  }
+} */
