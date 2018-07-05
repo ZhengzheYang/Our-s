@@ -9,4 +9,5 @@ import HomePage from './Homepage';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(<HomePage />, document.getElementById('root'));
+// ReactDOM.render(Element, document.getElementById('collections'));
 registerServiceWorker();
