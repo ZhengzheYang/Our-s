@@ -1,11 +1,16 @@
 import React from 'react';
-import Photo from './OnePhoto'
+import OneCard from './OneCard';
 
+// the collection page where all our works will be displayed
 class Collections extends React.Component {
-  LoadImages = () => {
+  importAll = (r) => {
+    return r.keys().map(r);
+  };
+
+  LoadCards = () => {
     const images = this.importAll(require.context('./images/', false, /\.(png|jpe?g)$/));
-    const collection = images.map((image) => (
-      <Photo img={image}></Photo>
+    const collection = images.map((image, i) => (
+      <OneCard img={image} key={i}></OneCard>
     ));
 
     return (
@@ -15,37 +20,13 @@ class Collections extends React.Component {
     );
   };
 
-  importAll = (r) => {
-    return r.keys().map(r);
-  };
-
   render() {
     return (
-      <div>
-        <this.LoadImages />
+      <div class="card-columns">
+        <this.LoadCards/>
       </div>
     );
   }
 }
 
 export default Collections
-
-// const CommentList = (props) => {
-//   const commentNodes = props.data.map(comment => (
-//     <Comment
-//       author={comment.author}
-//       key={comment._id}
-//       id={comment._id}
-//       timestamp={comment.updatedAt}
-//       handleUpdateComment={props.handleUpdateComment}
-//       handleDeleteComment={props.handleDeleteComment}
-//     >
-//       { comment.text}
-//     </Comment>
-//   ));
-//   return (
-//     <div>
-//       { commentNodes }
-//     </div>
-//   );
-// };

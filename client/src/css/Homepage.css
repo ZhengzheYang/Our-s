@@ -1,50 +1,28 @@
 .container-homepage {
   position: relative;
-  /* height: 100%;
-  width: 100%; */
-  /* height: 100%; */
-  /* min-height: 500px;
-  max-height: 1080px; */
   min-height: 100%;
   width: auto;
   background-image: url("../images/IMG477.jpeg");
   background-size: cover;
-  /* padding: px; */
   padding-bottom: 63px;
-  /* background-repeat: no-repeat; */
-  /* overflow: hidden; */
+}
 
-  /* background-image: url("../images/IMG477.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%; */
-  /* bottom: 0;
-  right: 0; */
+@keyframes pulsate {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
 }
 
 .container-collections {
   padding: 100px;
-  /* border-bottom: 1px solid $border; */
-  /* background-color: #f1f1f1;
-  padding:0;
-  margin:0;
-
-  min-height: 100%;
-  min-width: 100%;
-
-  width: auto;
-  height: auto;
-
-  position: fixed;
-  top: 0;
-  left: 0; */
-
-  /* background-image: url("../images/IMG477.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%; */
-  /* bottom: 0;
-  right: 0; */
 }
 
 .onephoto {
@@ -95,17 +73,10 @@
 }
 
 .navbar.transparent.navbar-inverse {
-    /* border-width: 0px; */
-    /* -webkit-box-shadow: 0px 0px; */
-    /* box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1); */
     background-color: rgba(0,0,0,0.5);
     position: fixed;
     width: 100%;
-    /* top: 0; */
     z-index: 100;
-    /* background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));;
-    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
-    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%); */
 }
 
 .btn {
@@ -119,42 +90,13 @@
 }
 
 i {
-  /* background: rgba(143, 211, 157, 1); */
-  /* border-radius: 100%; */
   margin-left: 50%;
   margin-top: 42%;
   font-size: 40px;
   display:inline-block;
   color: #101010
-  /* vertical-align: middle; */
 }
 
 i:hover {
-  /* background: rgba(143, 211, 157, 1); */
-  /* border-radius: 100%; */
-  /* margin-left: 50%;
-  margin-top: 42%;
-  font-size: 40px;
-  display:inline-block; */
   color: #808080
-  /* vertical-align: middle; */
 }
-
-/* .bg {
-  min-height: 100%;
-  min-width: 1024px;
-
-  width: 100%;
-  height: auto;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-@media screen and (max-width: 1024px) {
-  .bg {
-    left: 50%;
-    margin-left: -512px;
-  }
-} */
