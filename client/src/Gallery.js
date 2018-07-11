@@ -55,7 +55,6 @@ class Gallery extends Component {
   componentDidMount() {
     this.loadImages();
     window.addEventListener('scroll', this.handleScroll);
-    // window.Popper = require('popper.js').default;
   }
 
   componentWillUnmount() {
@@ -78,12 +77,9 @@ class Gallery extends Component {
     fetch("/images")
       .then(data => data.json())
       .then((res) => {
-        // console.log(res);
         const newData = this.state.images.slice()    //now only one image for testing
         newData.push(...res)
-        // console.log(newData);
         this.setState({ images: newData });
-        // this.setState({ images: newData });
       });
   }
 
@@ -175,20 +171,10 @@ class Gallery extends Component {
   }
 
 	render () {
-    // console.log(Octicons.threebars);
     const mappedImages = this.state.images.map(image => mapImage(image));
-    // console.log(mappedImages);
-
-    // let img = mappedImages[0];
-    // for(let i = 0; i < 10; i++) {
-    //   mappedImages.push(img)
-    // }
 
     let img_1 = mappedImages[0];
     let img_2 = mappedImages[1];
-    // console.log(img);
-    // images.push(img);
-    // console.log(images);
     for(let i = 0; i < 10; i++) {
       if(img_1 && img_2) {
         if (i % 2 === 0){
@@ -219,70 +205,8 @@ class Gallery extends Component {
             </svg>
           </div>
         </nav>
-        {/* <div class="dropdown">
-            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <div className="svg-icon svg-icon-rotate">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-            viewBox="0 0 12 16">
-            <path
-            d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"
-            />
-            </svg>
-          </div>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-          <div class="container-fluid">
-            <div class="row">
-            <div class="col-sm">
-            <div class="dropdown-item-text">Country</div>
-            <a class="dropdown-item" href="#">City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            </div>
-            <div class="col-sm">
-            <div class="dropdown-item-text">Country</div>
-            <a class="dropdown-item" href="#">City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            </div>
-            <div class="col-sm">
-            <div class="dropdown-item-text">Country</div>
-            <a class="dropdown-item" href="#">City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-sm">
-            <div class="dropdown-item-text">Country</div>
-            <a class="dropdown-item" href="#">City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            </div>
-            <div class="col-sm">
-            <div class="dropdown-item-text">Country</div>
-            <a class="dropdown-item" href="#">City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            </div>
-            <div class="col-sm">
-            <div class="dropdown-item-text">Country</div>
-            <a class="dropdown-item" href="#">City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            <a class="dropdown-item" href="#">Another City</a>
-            </div>
-            </div>
-          </div>
-            </div>
-        </div> */}
-
-        {/* </nav> */}
-
         <Menu right customBurgerIcon={ false } isOpen={this.state.menuOpen}
           onStateChange={(state) => this.handleStateChange(state)} width={ '50%' }>
-          {/* <a id="home" className="menu-item" href="/">Home</a>
-            <a id="about" className="menu-item" href="/about">About</a>
-          <a id="contact" className="menu-item" href="/contact">Contact</a> */}
           <div className="bm-item">
             <div className="row align-items-center">
               <div className="col-sm-4">
@@ -374,16 +298,12 @@ class Gallery extends Component {
             <div className="text-center">
               <div className="heading">{`${this.props.collection}`}</div>
             </div>
-
-            {/* {this.props.heading && <h2>{this.props.heading}</h2>} */}
-            {/* {this.props.subheading && <p>{this.props.subheading}</p>} */}
             {this.renderGallery()}
             <Lightbox
               className="light-box"
               currentImage={this.state.currentImage}
               images={mappedImages}
               isOpen={this.state.lightboxIsOpen}
-              // onClickImage={this.handleClickImage}
               onClickNext={this.gotoNext}
               onClickPrev={this.gotoPrevious}
               onClickThumbnail={this.gotoImage}
@@ -392,11 +312,6 @@ class Gallery extends Component {
               preloadNextImage={true}
               preventScroll={this.props.preventScroll}
               showThumbnails={true}
-
-              // spinner={this.props.spinner}
-              // spinnerColor={this.props.spinnerColor}
-              // spinnerSize={this.props.spinnerSize}
-              // theme={this.props.theme}
             />
           </div>
         </div>

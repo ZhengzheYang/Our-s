@@ -44,29 +44,6 @@ class Home extends React.Component {
 
     return(
       <div>
-        {/* <nav className="navbar transparent navbar-inverse navbar-fixed-top">
-          <div className="navbar-header">
-            <div className="navbar-brand" onClick={this.scrollToTop} style={{cursor:'pointer'}}>Our's</div>
-          </div>
-          <div class="btn-toolbar navbar-right" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group" role="group" aria-label="Third group">
-          <div className="btn" onClick={this.scrollToTop}>Home</div>
-            </div>
-            <div class="btn-group mr-2" role="group" aria-label="First group">
-          <div className="btn" onClick={this.scrollToCollections}>Collections</div>
-            </div>
-            <div class="btn-group mr-2" role="group" aria-label="Second group">
-          <div className="btn" onClick={this.scrollToUs}>Us</div>
-            </div>
-          </div>
-          </nav>
-          <div className="container-slides">
-          <Slides/>
-          </div>
-          <div className='elements'>
-          <Element name='collections'/>
-        </div> */}
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="navbar-brand" onClick={this.scrollToTop} style={{cursor:'pointer'}}>Our's</div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

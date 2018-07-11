@@ -9,8 +9,6 @@ const OneCard = (props) => {
       <div class="center text-center">
         <img class="card-img" src={props.img} alt="sorry"/>
         <div className="overlay"/>
-        {/* <span>{`${collection}`}</span>
-        </div> */}
         <div className="overlay-text">{`${collection}`}</div>
       </div>
     </div>
