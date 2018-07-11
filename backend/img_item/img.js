@@ -5,14 +5,11 @@ const Schema = mongoose.Schema;
 // create new instance of the mongoose.schema. the schema takes an
 // object that shows the shape of your database entries.
 const imgSchema = new Schema ({
-  img: {
-    data: Buffer,
-    contentType: String,
+    path: String,
     author: String,
     date: String,
-    where: String,
-  }
+    where: String
   });
 
 // export our module to use in server.js
-export default mongoose.model('img_item', imgSchema);
+export default mongoose.model('img_item', imgSchema, 'images');

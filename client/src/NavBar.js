@@ -1,51 +1,101 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { animateScroll as scroll, scroller, Element } from 'react-scroll';
+import Slides from './Slides';
 
-const ButtonToNavigate = () => (
-  <Router>
-    <div>
-      <Link to="/collections">
-        <i class="fas fa-angle-double-down"></i>
-      </Link>
-      <Route path="/collections" component={Collections} />
-    </div>
-  </Router>
-    );
-
-    const Collections = () => (
-      <div>
-      </div>
-    );
+/* global $ */
 
 // the first part of the website including navbar
-class Navigation extends React.Component {
+class Home extends React.Component {
+  constructor() {
+    super();
+    this.scrollToCollections = this.scrollToCollections.bind(this);
+    this.scrollToUs = this.scrollToUs.bind(this);
+    this.scrollToContact = this.scrollToContact.bind(this);
+    this.scrollToTop = this.scrollToTop.bind(this);
+  }
+
+  scrollToCollections() {
+    scroller.scrollTo('collections', {
+      smooth: true,
+      offset: -62,
+    });
+
+  }
+
+  scrollToUs() {
+    scroller.scrollTo('us', {
+      smooth: true,
+      offset: -32,
+    });
+
+  }
+
+  scrollToContact() {
+    scroll.scrollToBottom();
+
+  }
+
+  scrollToTop() {
+    scroll.scrollToTop();
+
+  }
+
   render() {
+
     return(
       <div>
-        <nav className="navbar transparent navbar-inverse navbar-fixed-top">
+        {/* <nav className="navbar transparent navbar-inverse navbar-fixed-top">
           <div className="navbar-header">
-            <a className="navbar-brand" href="/">Our's</a>
+            <div className="navbar-brand" onClick={this.scrollToTop} style={{cursor:'pointer'}}>Our's</div>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="btn-toolbar navbar-right" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group" role="group" aria-label="Third group">
+          <div className="btn" onClick={this.scrollToTop}>Home</div>
+            </div>
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+          <div className="btn" onClick={this.scrollToCollections}>Collections</div>
+            </div>
+            <div class="btn-group mr-2" role="group" aria-label="Second group">
+          <div className="btn" onClick={this.scrollToUs}>Us</div>
+            </div>
+          </div>
+          </nav>
+          <div className="container-slides">
+          <Slides/>
+          </div>
+          <div className='elements'>
+          <Element name='collections'/>
+        </div> */}
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="navbar-brand" onClick={this.scrollToTop} style={{cursor:'pointer'}}>Our's</div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="btn-toolbar navbar-right" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group mr-2" role="group" aria-label="First group">
-              <a className="btn" href="/collections" role="button">Collections</a>
-            </div>
-            <div class="btn-group mr-2" role="group" aria-label="Second group">
-              <a className="btn" href="/" role="button">Us</a>
-            </div>
-            <div class="btn-group" role="group" aria-label="Third group">
-              <a className="btn" href="/" role="button">Contact</a>
-            </div>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <div className="btn" onClick={this.scrollToTop} data-toggle="collapse" data-target=".navbar-collapse.show">Home <span class="sr-only">(current)</span></div>
+              </li>
+              <li class="nav-item">
+                <div className="btn" onClick={this.scrollToCollections} data-toggle="collapse" data-target=".navbar-collapse.show">Collections <span class="sr-only">(current)</span></div>
+              </li>
+              <li class="nav-item">
+                <div className="btn" onClick={this.scrollToUs} data-toggle="collapse" data-target=".navbar-collapse.show">Us <span class="sr-only">(current)</span></div>
+              </li>
+            </ul>
           </div>
         </nav>
-        <ButtonToNavigate/>
+        <div className="container-slides">
+          <Slides/>
+        </div>
+        <div className='elements'>
+          <Element name='collections'/>
+        </div>
       </div>
     );
   }
 }
 
-export default Navigation;
+export default Home;

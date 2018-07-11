@@ -1,8 +1,10 @@
 import React from 'react';
-import Navigation from './NavBar';
-import Collections from './Collections';
+import Home from './NavBar';
+import { Collections } from './Collections';
+import Us from './Us';
 import './css/Homepage.css';
-import { animateScroll as scroll } from 'react-scroll';
+import { scroller, animateScroll as scroll } from 'react-scroll';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 // the whole page
 class HomePage extends React.Component{
@@ -18,21 +20,16 @@ class HomePage extends React.Component{
 
   // use react-scroll to scroll smoothly
   handleScroll = (event) => {
-    scroll.scrollTo(100);
+    scroller.scrollTo(100);
   };
 
   // render the different components
   render() {
     return(
       <div>
-        <div className='container-homepage'>
-          <div className="nagivation">
-            <Navigation/>
-          </div>
-        </div>
-        <div className='container-collections'>
-          <Collections />
-        </div>
+        <Home/>
+        <Collections />
+        <Us/>
       </div>
     );
   }
