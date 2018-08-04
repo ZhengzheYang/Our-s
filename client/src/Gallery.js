@@ -4,7 +4,8 @@ import { css, StyleSheet } from 'aphrodite/no-important';
 import Lightbox from 'react-images';
 import Threebars from './svg/three-bars.svg'
 import { scroller } from 'react-scroll';
-import { slide as Menu } from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu';
+import { fileNames } from './Collections';
 // import Octicons from 'octicons';
 // import OneCard from './OneCard';
 
@@ -28,6 +29,17 @@ const mapImage = (image) => {
     _id: image._id
 	}
 }
+
+const filenameToLink = (filename) => {
+  let name = filename.split(".")[0];
+  return (
+    <div className="menu-block">
+      <a className="menu-item" href={"/" + name}>{name}</a>
+    </div>
+  );
+}
+
+// const Links = fileNames.map((filename) => filenameToLink(filename))
 
 class Gallery extends Component {
 	constructor (props) {
@@ -53,6 +65,7 @@ class Gallery extends Component {
 
   // handle the scoll event by adding a listener
   componentDidMount() {
+    console.log(fileNames)
     this.loadImages();
     window.addEventListener('scroll', this.handleScroll);
   }
@@ -74,11 +87,13 @@ class Gallery extends Component {
   };
 
   loadImages = () => {
+    // console.log(this.props.collection)
     fetch("/images")
       .then(data => data.json())
       .then((res) => {
+        console.log(res)
         const newData = this.state.images.slice()    //now only one image for testing
-        newData.push(...res)
+        newData.push(...res[0][this.props.collection])
         this.setState({ images: newData });
       });
   }
@@ -123,18 +138,18 @@ class Gallery extends Component {
 		// const { images } = this.props;
     const images = this.state.images.map(image => mapImage(image));
 
-    let img_1 = images[0];
-    let img_2 = images[1];
-    for(let i = 0; i < 10; i++) {
-      if(img_1 && img_2) {
-        if (i % 2 === 0){
-          images.push(img_2)
-        }
-        else{
-          images.push(img_1)
-        }
-      }
-    }
+    // let img_1 = images[0];
+    // let img_2 = images[1];
+    // for(let i = 0; i < 10; i++) {
+    //   if(img_1 && img_2) {
+    //     if (i % 2 === 0){
+    //       images.push(img_2)
+    //     }
+    //     else{
+    //       images.push(img_1)
+    //     }
+    //   }
+    // }
 
 
 		if (!images || images.length === 0) return;
@@ -173,18 +188,18 @@ class Gallery extends Component {
 	render () {
     const mappedImages = this.state.images.map(image => mapImage(image));
 
-    let img_1 = mappedImages[0];
-    let img_2 = mappedImages[1];
-    for(let i = 0; i < 10; i++) {
-      if(img_1 && img_2) {
-        if (i % 2 === 0){
-          mappedImages.push(img_2)
-        }
-        else{
-          mappedImages.push(img_1)
-        }
-      }
-    }
+    // let img_1 = mappedImages[0];
+    // let img_2 = mappedImages[1];
+    // for(let i = 0; i < 10; i++) {
+    //   if(img_1 && img_2) {
+    //     if (i % 2 === 0){
+    //       mappedImages.push(img_2)
+    //     }
+    //     else{
+    //       mappedImages.push(img_1)
+    //     }
+    //   }
+    // }
 
 		if (!mappedImages || mappedImages.length === 0 ) {
 			return null;
@@ -205,95 +220,27 @@ class Gallery extends Component {
             </svg>
           </div>
         </nav>
+
         <Menu right customBurgerIcon={ false } isOpen={this.state.menuOpen}
           onStateChange={(state) => this.handleStateChange(state)} width={ '50%' }>
           <div className="bm-item">
-            <div className="row align-items-center">
-              <div className="col-sm-4">
-                <div className="menu-item-text">Country</div>
-                <div className="menu-block">
-                  <a className="menu-item" href="#">City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                </div>
-              </div>
-              <div className="col-sm-4">
-                <div className="menu-item-text">Country</div>
-                <div className="menu-block">
-                  <a className="menu-item" href="#">City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                </div>
-              </div>
-              <div className="col-sm-4">
-                <div className="menu-item-text">Country</div>
-                <div className="menu-block">
-                  <a className="menu-item" href="#">City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                </div>
+            {/* <div className="menu-block">
+              <a className="menu-item" href="/">Home</a>
+            </div> */}
+            <div>{fileNames.map((filename) => filenameToLink(filename))}</div>
+          </div>
+          {/* <div className="bm-item">
+            <div className="row justify-content-md-center">
+              <div className="col col-3">
+            <div className="menu-block">
+            <a className="menu-item" href="#">Cityfdfdjffsdkjdkfjdfkdjfd</a>
+            </div>
               </div>
             </div>
-          </div>
-          <div className="bm-item">
-            <div className="row align-items-center">
-              <div className="col-sm-4">
-                <div className="menu-item-text">Country</div>
-                <div className="menu-block">
-                  <a className="menu-item" href="#">City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                </div>
-              </div>
-              <div className="col-sm-4">
-                <div className="menu-item-text">Country</div>
-                <div className="menu-block">
-                  <a className="menu-item" href="#">City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                </div>
-              </div>
-              <div className="col-sm-4">
-                <div className="menu-item-text">Country</div>
-                <div className="menu-block">
-                  <a className="menu-item" href="#">City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bm-item">
-            <div className="row align-items-center">
-              <div className="col-sm-4">
-                <div className="menu-item-text">Country</div>
-                <div className="menu-block">
-                  <a className="menu-item" href="#">City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                </div>
-              </div>
-              <div className="col-sm-4">
-                <div className="menu-item-text">Country</div>
-                <div className="menu-block">
-                  <a className="menu-item" href="#">City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                </div>
-              </div>
-              <div className="col-sm-4">
-                <div className="menu-item-text">Country</div>
-                <div className="menu-block">
-                  <a className="menu-item" href="#">City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                  <a className="menu-item" href="#">Another City</a>
-                </div>
-              </div>
-            </div>
-          </div>
+          </div> */}
         </Menu>
 
-        <div className="container-gallery">
+            <div className="container-gallery">
           <div className="container-fluid">
             <div className="text-center">
               <div className="heading">{`${this.props.collection}`}</div>

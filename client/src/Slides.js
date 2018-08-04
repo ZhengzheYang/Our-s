@@ -24,7 +24,7 @@ class Slides extends React.Component {
     // const style_screen = "width: " + this.state.width + " " + "height: " + this.state.height;
     // const img_style = {heigth: this.state.height};
     return(
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="6000">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -32,24 +32,24 @@ class Slides extends React.Component {
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div className="slide-img"/>
+            <div className="slide-img-1"/>
             <div class="carousel-caption">
-              <h5>Some Text</h5>
-              <p>Some Text</p>
+              <h5>Endless</h5>
+              <p>By Zhengzhe</p>
             </div>
           </div>
           <div class="carousel-item">
-            <div className="slide-img"/>
+            <div className="slide-img-2"/>
             <div class="carousel-caption">
-              <h5>Some Text</h5>
-              <p>Some Text</p>
+              <h5>Memories</h5>
+              <p>By Ying</p>
             </div>
           </div>
           <div class="carousel-item">
-            <div className="slide-img"/>
+            <div className="slide-img-3"/>
             <div class="carousel-caption">
-              <h5>Some Text</h5>
-              <p>Some Text</p>
+              <h5>The kiss</h5>
+              <p>By Ying</p>
             </div>
           </div>
         </div>

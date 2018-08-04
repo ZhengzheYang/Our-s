@@ -8,9 +8,9 @@ import { animateScroll as scroll, scroller, Element } from 'react-scroll';
 // import { Element } from 'react-scroll';
 
 // const galleries = [];
-const fileNames = ["Atlanta.jpg", "Beijing.jpg", "Chengdu.jpg",
-        "Hong Kong.jpg", "Lasa.jpg", "Lijiang.jpg", "New York.jpg",
-        "San Diego.jpg", "Shangrila.jpg"];
+const fileNames = ["Beijing.jpg", "Chengdu.jpg", "Dali.jpg", "Hong Kong.jpg",
+        "Lhasa.jpg", "Lulang.jpg", "Namtso.jpg",
+        "Nyingchi.jpg", "United States.jpg", "Shanghai.jpg", "Shangrila.jpg"];
 // const galleries = fileNames.map((filename, i) => {
 //   let path = filename.split(".")[0];
 //   return (
