@@ -20,7 +20,10 @@
     "nodemon": "^1.17.5",
     "octicons": "^7.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+  },
   "scripts": {
     "start:server": "cd backend && nodemon server.js --exec babel-node --presets es2015,stage-0",
     "start:client": "cd client && npm start",
