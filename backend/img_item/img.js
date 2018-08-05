@@ -12,4 +12,4 @@ const imgSchema = new Schema ({
   });
 
 // export our module to use in server.js
-export default imgSchema;
+module.exports = imgSchema;

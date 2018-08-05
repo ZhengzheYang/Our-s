@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const secret = require('./secrets');
+const getSecret = require('./secrets');
 const fileSystem = require('file-system');
 const imgSchema = require('./img_item/img');
 const multer = require('multer');
@@ -16,7 +16,7 @@ const img_item = mongoose.model('img_item', imgSchema, 'images')
 const API_PORT = process.env.API_PORT || 3001;
 
 // db config -- set your URI from mLab in secrets.js
-mongoose.connect(secret.getSecret('dbUri'));
+mongoose.connect(getSecret('dbUri'));
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
