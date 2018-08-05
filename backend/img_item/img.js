@@ -12,4 +12,5 @@ const imgSchema = new Schema ({
   });
 
 // export our module to use in server.js
-export default mongoose.model('img_item', imgSchema, 'images');
+;
+export default imgSchema;

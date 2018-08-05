@@ -1,21 +1,22 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import logger from 'morgan';
-import mongoose from 'mongoose';
-import { getSecret } from './secrets';
-import fileSystem from 'file-system';
-import img_item from './img_item/img';
-import multer from 'multer';
+const express = require('express');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+const mongoose = require('mongoose');
+const secret = require('./secrets');
+const fileSystem = require('file-system');
+const imgSchema = require('./img_item/img');
+const multer = require('multer');
 
 // create instances
 const app = express();
 const router = express.Router();
+const img_item = mongoose.model('img_item', imgSchema, 'images')
 
 // set our port to either a predetermined port number if you have set it up, or 3001
 const API_PORT = process.env.API_PORT || 3001;
 
 // db config -- set your URI from mLab in secrets.js
-mongoose.connect(getSecret('dbUri'));
+mongoose.connect(secret.getSecret('dbUri'));
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
