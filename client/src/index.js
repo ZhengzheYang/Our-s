@@ -9,6 +9,7 @@ import Gallery from './Gallery';
 // import { galleries } from './Collections';
 import { fileNames } from './Collections';
 
+require('dotenv').config();
 
 // console.log(galleries[0].path);
 /* path: path to the website object: the gallery object*/
