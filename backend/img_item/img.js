@@ -1,5 +1,5 @@
 // model/comment.js
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // create new instance of the mongoose.schema. the schema takes an
