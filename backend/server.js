@@ -69,6 +69,6 @@ router.get('/images', (req, res) => {
 
 // router.post()
 
-app.use('/', router);
+app.use('/api', router);
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
