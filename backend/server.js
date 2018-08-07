@@ -25,6 +25,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
+app.use(cors())
 
 // app.use(multer({ dest: '../client/src/images/',
 //   rename: (fieldname, filename) => {
@@ -35,8 +36,8 @@ app.use(logger('dev'));
 router.get('/', (req, res) => {
   res.json({ message: 'Hello, World!' });
 });
-
-router.get('/images', cors({ origin: 'http://yingandjack.com.s3-website.us-east-2.amazonaws.com' }), (req, res) => {
+// , cors({ origin: 'http://yingandjack.com.s3-website.us-east-2.amazonaws.com' })
+router.get('/images', (req, res) => {
   img_item.find({}, (err, img) => {
     if (err) return res.json({ success: false, error: err });
     return res.json(img);
