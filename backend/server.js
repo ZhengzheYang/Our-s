@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const getSecret = require('./secrets');
 const fileSystem = require('file-system');
 const imgSchema = require('./img_item/img');
+const cors = require('cors')
 const multer = require('multer');
 
 // create instances
@@ -35,7 +36,7 @@ router.get('/', (req, res) => {
   res.json({ message: 'Hello, World!' });
 });
 
-router.get('/images', (req, res) => {
+router.get('/images', cors({ origin: 'https://d30dz5h1f645kj.cloudfront.net/' }), (req, res) => {
   img_item.find({}, (err, img) => {
     if (err) return res.json({ success: false, error: err });
     return res.json(img);
