@@ -36,7 +36,7 @@ router.get('/', (req, res) => {
   res.json({ message: 'Hello, World!' });
 });
 
-router.get('/images', cors({ origin: 'https://d30dz5h1f645kj.cloudfront.net/' }), (req, res) => {
+router.get('/images', cors({ origin: 'http://yingandjack.com.s3-website.us-east-2.amazonaws.com' }), (req, res) => {
   img_item.find({}, (err, img) => {
     if (err) return res.json({ success: false, error: err });
     return res.json(img);

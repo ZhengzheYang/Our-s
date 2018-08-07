@@ -88,7 +88,7 @@ class Gallery extends Component {
 
   loadImages = () => {
     // console.log(this.props.collection)
-    fetch("/images")
+    fetch("/api/images")
       .then(data => data.json())
       .then((res) => {
         console.log(res)
