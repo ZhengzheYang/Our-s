@@ -40,7 +40,7 @@ const filenameToLink = (filename) => {
 }
 
 // const Links = fileNames.map((filename) => filenameToLink(filename))
-
+const url = "https://api.yingandjack.com:3001";
 class Gallery extends Component {
 	constructor (props) {
 		super(props);
@@ -88,7 +88,7 @@ class Gallery extends Component {
 
   loadImages = () => {
     // console.log(this.props.collection)
-    fetch("/api/images")
+    fetch("https://api.yingandjack.com/api/images")
       .then(data => data.json())
       .then((res) => {
         console.log(res)
